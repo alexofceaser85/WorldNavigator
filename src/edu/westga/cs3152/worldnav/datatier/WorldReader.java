@@ -2,7 +2,6 @@ package edu.westga.cs3152.worldnav.datatier;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Collection;
 import java.util.Scanner;
 import java.util.zip.DataFormatException;
 
@@ -74,17 +73,9 @@ public class WorldReader {
 			String worldLocationDescription = worldFileScanner.nextLine();
 			String[] adjacentLocationNames = worldFileScanner.nextLine().split(",");
 			
+			Location[] adjacentLocations = this.getAjacentLocations(adjacentLocationNames);
+			
 			Location worldLocation = new Location(worldLocationName, worldLocationDescription);
-			Location[] adjacentLocations = new Location[adjacentLocationNames.length];
-			
-			int locationIndex = 0;
-			for (String locationName : adjacentLocationNames) {
-				if (!locationName.isBlank()) {
-					adjacentLocations[locationIndex] = new Location(locationName, " ");
-					locationIndex++;
-				}
-			}
-			
 			world.getWorldGraph().addNode(new Node<Location>(worldLocation, adjacentLocations));
 			
 			if (isStartNode) {
@@ -95,5 +86,18 @@ public class WorldReader {
 		
 		worldFileScanner.close();
 		return world;
+	}
+	
+	private Location[] getAjacentLocations(String[] adjacentLocationNames) {
+		int locationIndex = 0;
+		Location[] adjacentLocations = new Location[adjacentLocationNames.length];
+		for (String locationName : adjacentLocationNames) {
+			if (!locationName.isBlank()) {
+				adjacentLocations[locationIndex] = new Location(locationName, "PlaceHolder Description");
+				locationIndex++;
+			}
+		}
+		
+		return adjacentLocations;
 	}
 }

@@ -14,6 +14,12 @@ public class Digraph<T> {
 
 	private Collection<Node<T>> nodes;
 	
+	/**
+	 * Creates a new Digraph
+	 * 
+	 * @precondition none
+	 * @postcondition this.nodes == new ArrayList<Node<T>>
+	 */
 	public Digraph() {
 		this.nodes = new ArrayList<Node<T>>();
 	}
@@ -53,11 +59,17 @@ public class Digraph<T> {
 		return adjacentNodes;
 	}
 	
+	/**
+	 * Adds a node
+	 * 
+	 * @precondition nodeToAdd != null
+	 * @postcondition this.nodes.length == this.nodes.length@prev + 1
+	 * @param nodeToAdd the node to add
+	 */
 	public void addNode(Node<T> nodeToAdd) {
+		if (nodeToAdd == null) {
+			throw new IllegalArgumentException("Cannot add a null node");
+		}
 		this.nodes.add(nodeToAdd);
-	}
-	
-	public boolean removeNode(Node<T> nodeToRemove) {
-		return this.nodes.remove(nodeToRemove);
 	}
 }
