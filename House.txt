@@ -1,0 +1,40 @@
+A House Expedition
+hallway
+You are standing in a narrow hallway with a living room and kitchen to the left, and a bathroom and bedroom to the right. At the end of the hallway is a staircase. To your back is the wrought-iron front door.
+staircase,kitchen,living room,bedroom,bathroom,front-door
+front-door
+The front-door closes with a loud bang behind you. You rattle at the door knob, but the door remains locked. It's time you pass your time with something more meaningful than snooping around in other persons' homes. How did you get in there anyway?
+
+staircase
+A set of stairs leads up to the roof and another set of stairs leads down to the basement.
+hallway,upstairs,downstairs
+upstairs
+The staircase ends at an attic. It is very hot and humid. A dim light comes from the end of the attic. You can use the staircase to go back down or explore the attic.
+staircase,attic
+downstairs
+You are at the bottom of the staircase. There is an open entry to a storage room and to a garage.
+staircase,storeroom,garage
+attic
+The attic is crammed with dusty furniture. The light at the end of the attic comes from a window. A golden glow surrounds the window and a fresh breeze invites you to climb out of the window. You can use the staircase to go back down or climb out of the window.
+staircase,climb out of window
+climb out of window
+That was stupid. You are slipping and falling out of the window. Let's hope you are not going to break your neck.
+
+kitchen
+The kitchen is bright and has been freshly painted with a white coat of paint. Next to a huge refrigerator, a doorway opens to the living room.
+hallway,living room
+living room
+The living room looks cozy. There is a huge couch with a lot of pillows and throws, a coffee table, and various potted plants. You can leave the living room using the doorway to the kitchen or a door leading back to the hallway.
+hallway,kitchen
+bedroom
+Since the bedroom has no windows, you can barely see the queen size bed. Some light comes from the open door to the bathroom and the door that leads back to the hallway.
+hallway,bathroom
+bathroom
+You are in a tiny bathroom with a curbless shower and two grab bars at the walls. You can use the door to the bedroom or to the hallway.
+hallway,bedroom
+storeroom
+The walls of the storeroom are lined with shelves. There are jars with pickled vegetables and jams. There are cans, three large water containers, and a narrow shelf with wine bottles. But something is odd ... there should have been an entry way leading back to the staircase. However, there is only a door to the garage. 
+garage
+garage
+The garage is empty, except for a few gardening tools hanging at the opposite wall. A door leads to the storage room and an open entry way shows the staircase leads back upstairs.
+staircase,storeroom

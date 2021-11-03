@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane fx:id="guiPane" prefHeight="550.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs3152.worldnav.controller.WorldController">
+   <children>
+      <Label fx:id="worldNameLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="14.0" prefHeight="35.0" prefWidth="500.0" text="Name of World" textAlignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Label fx:id="choiceLabel" layoutX="145.0" layoutY="264.0" prefHeight="27.0" prefWidth="266.0" text="Where do you want to go next?">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <ScrollPane fx:id="buttonScrollPane" layoutX="140.0" layoutY="295.0" prefHeight="227.0" prefWidth="284.0">
+         <content>
+            <VBox fx:id="buttonVBox" prefHeight="219.0" prefWidth="250.0" spacing="10.0" />
+         </content>
+         <padding>
+            <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+         </padding>
+      </ScrollPane>
+      <ScrollPane layoutX="34.0" layoutY="58.0" prefHeight="191.0" prefWidth="480.0">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <content>
+            <TextFlow fx:id="descriptionTextFlow" prefHeight="162.0" prefWidth="450.0" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
