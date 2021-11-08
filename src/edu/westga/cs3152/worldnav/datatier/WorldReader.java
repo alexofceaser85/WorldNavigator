@@ -55,18 +55,22 @@ public class WorldReader {
 	 * @throws DataFormatException if the format of the specified file is incorrect
 	 */
 	public World loadWorld(String filename) throws IOException, DataFormatException {
-		World world;
 		File worldFile = new File(filename);
 		Scanner worldFileScanner = new Scanner(worldFile);
 		
-		boolean isStartNode = true;
-		
-		if (worldFileScanner.hasNextLine()) {
-			world = new World(worldFileScanner.nextLine());
-		} else {
+		if (!worldFileScanner.hasNextLine()) {
 			worldFileScanner.close();
 			return null;
 		}
+		
+		World populatedWorld = this.populateNewWorld(worldFileScanner);
+		worldFileScanner.close();
+		return populatedWorld;
+	}
+
+	private World populateNewWorld(Scanner worldFileScanner) {
+		World world = new World(worldFileScanner.nextLine());
+		boolean isStartNode = true;
 		
 		while (worldFileScanner.hasNextLine()) {
 			String worldLocationName = worldFileScanner.nextLine();
@@ -83,8 +87,6 @@ public class WorldReader {
 				isStartNode = false;
 			}
 		}
-		
-		worldFileScanner.close();
 		return world;
 	}
 	
